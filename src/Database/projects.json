@@ -7,7 +7,7 @@
             "team": "Myself",
             "img": ["ltdc2020_01.png", "ltdc2020_02.png", "ltdc2020_03.png"],
             "technologies":["Codeigniter 3", "Bootstrap 4"],
-            "desc": "LINE TRACER DESIGN & CONTEST (LTDC) 2020 is an annual work program for the Workshop Elektro at Universitas Negeri Malang. I take a part in making a web platform that participants can register and submit their works. I work on almost all features like homepage, authentification, account management, admin side, work management, and payment confirmation. On special note, this is the literally first time that i doing some stuff on backend side."
+            "desc": "LINE TRACER DESIGN & CONTEST (LTDC) 2020 is an annual work program for the Workshop Elektro at Universitas Negeri Malang. I take a part in making a web platform that participants can register and submit their works. I work on almost all features such as homepage, authentification, account management, admin side, work management, and payment confirmation. On special note, this is the literally first time that i'm doing some stuff on backend side."
         },
         {
             "id": 1,
