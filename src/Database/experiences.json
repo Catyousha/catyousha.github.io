@@ -1,0 +1,18 @@
+{
+    "experiences": [
+        {
+            "id": 0,
+            "title": "Informatics Engineering Students",
+            "place": "Universitas Negeri Malang",
+            "time": "2019 - Present",
+            "img": "Lambang-UM.png"
+        },
+        {
+            "id": 1,
+            "title": "Web Subdivision - Person In Charge",
+            "place": "Workshop Elektro",
+            "time": "2020 - Present",
+            "img": "wse.png"
+        }
+    ]
+}

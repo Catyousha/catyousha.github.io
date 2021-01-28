@@ -1,0 +1,14 @@
+{
+    "contacts": [
+        {
+            "id": 0,
+            "address": "github.com/Catyousha",
+            "img": "Octocat.png"
+        },
+        {
+            "id": 1,
+            "address": "jakaasha@gmail.com",
+            "img": "Gmail-logo.png"
+        }
+    ]
+}
