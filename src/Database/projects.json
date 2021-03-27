@@ -17,6 +17,15 @@
             "img": ["karyaku_01.png", "karyaku_02.png", "karyaku_03.png", "karyaku_04.png", "karyaku_05.png"],
             "technologies":["Codeigniter 3", "Bootstrap 4"],
             "desc": "Aplikasi Repositori Karya Berbasis Website Untuk Pelajar SMK (KARYAKU) is a web-based information system that serves as a place to accommodate student's works. In this project, I work on some important CRUD features like profile account, the student's works management, and subscription. However, this project is not available on production because it was made for our final project for the Web Development and Database II course."
+        },
+        {
+            "id": 2,
+            "title": "UTBK Brightscholarship Tryout UM",
+            "role": "Fullstack Developer",
+            "team": "Myself",
+            "img": ["tobsum_01.png", "tobsum_02.png", "tobsum_03.png", "tobsum_04.png", "tobsum_05.png","tobsum_06.png","tobsum_07.png", "tobsum_08.png"],
+            "technologies":["Laravel 8", "Bootstrap 4"],
+            "desc": "UTBK Brightscholarship Tryout UM is a platform used to carry out tryout exam and ranking activities followed by more than 130 participants on March 27, 2021 in rumbelbsum.com. The platform's feature is that it allows participants to work on a tryout exam within a period of time divided by section, view ranking, as well as the management of weight value for scoring and making questions on the admin side. All systems on this platform including database design are done by myself."
         }
     ]
 }
