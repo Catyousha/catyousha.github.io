@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:reportfolio/config/config.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'config/config.dart';
+import 'logic/logic.dart';
+import 'repository/repository.dart';
 
 void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,6 +12,7 @@ void main(List<String> args) async {
     statusBarColor: AppColor.blueBase,
     statusBarBrightness: Brightness.dark,
   ));
+
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -21,11 +24,18 @@ class ReportfolioApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Jaka Asa Baldan Ahmad | Portfolio',
-      onGenerateRoute: RouteController.controller,
-      initialRoute: Routes.initial,
-      debugShowCheckedModeBanner: false,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<SkillCubit>(
+          create: (context) => SkillCubit(SkillRepository()),
+        ),
+      ],
+      child: const MaterialApp(
+        title: 'Jaka Asa Baldan Ahmad | Portfolio',
+        onGenerateRoute: RouteController.controller,
+        initialRoute: Routes.initial,
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }

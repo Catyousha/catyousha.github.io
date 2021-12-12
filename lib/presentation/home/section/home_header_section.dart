@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reportfolio/constants/constants.dart';
 import '../../../config/config.dart';
 
 class HomeHeaderSection extends StatelessWidget {
@@ -22,7 +23,8 @@ class HomeHeaderSection extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/bitmap/header-bg.jpg'),
+                      image: AssetImage(
+                          '${AssetConstant.commonImageLocation}/header-bg.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -34,8 +36,8 @@ class HomeHeaderSection extends StatelessWidget {
                     backgroundColor: AppColor.blueLight,
                     child: CircleAvatar(
                       radius: 50,
-                      backgroundImage:
-                          AssetImage('assets/bitmap/profile-pic.png'),
+                      backgroundImage: AssetImage(
+                          '${AssetConstant.commonImageLocation}/profile-pic.png'),
                     ),
                   ),
                 ),
