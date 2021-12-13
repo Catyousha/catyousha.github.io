@@ -2,8 +2,11 @@ import '../../../config/config.dart';
 import '../../../constants/constants.dart';
 import '../../repository.dart';
 
-
 class SkillStorage {
+  static Skill? skillByName(String name) {
+    return skillList.firstWhere((element) => element.title == name);
+  }
+
   static List<Skill> skillList = [
     const Skill(
       id: 0,
