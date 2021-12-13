@@ -8,7 +8,7 @@ enum ProjectType {
 }
 
 extension ProjectTypeExtension on ProjectType {
-  String get name {
+  String get text {
     switch (this) {
       case ProjectType.project:
         return 'Project';

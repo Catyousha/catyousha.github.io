@@ -17,6 +17,7 @@ class HomeScreen extends StatelessWidget {
               HomeHeaderSection(),
               AboutMeSection(),
               FeaturedSkillsSection(),
+              FeaturedProjectSection(),
             ],
           ),
         ),

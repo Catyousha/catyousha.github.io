@@ -4,7 +4,9 @@ import '../../repository.dart';
 
 class SkillStorage {
   static Skill? skillByName(String name) {
-    return skillList.firstWhere((element) => element.title == name);
+    return skillList.firstWhere(
+      (element) => element.title?.toLowerCase() == name.toLowerCase(),
+    );
   }
 
   static List<Skill> skillList = [
