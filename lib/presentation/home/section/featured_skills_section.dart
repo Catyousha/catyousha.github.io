@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import '../../../logic/logic.dart';
 import '../../../widgets/widgets.dart';
 import '../../../config/config.dart';
@@ -10,8 +11,16 @@ class FeaturedSkillsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // constraints: BoxConstraints(
+      //   maxWidth: getValueForScreenType<double>(
+      //     context: context,
+      //     mobile: MediaQuery.of(context).size.width,
+      //     tablet: MediaQuery.of(context).size.width * 0.45,
+      //     desktop: MediaQuery.of(context).size.width * 0.45,
+      //   ),
+      // ),
       color: AppColor.whiteBright,
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(18),
       child: Column(
         children: <Widget>[
           SectionHeaderText(
@@ -28,6 +37,7 @@ class FeaturedSkillsSection extends StatelessWidget {
               }
             },
             builder: (context, state) => Row(
+              mainAxisSize: MainAxisSize.min,
               children: state.skills?.map((skill) {
                     return Expanded(
                       child: Padding(

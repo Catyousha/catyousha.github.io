@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import '../../../repository/repository.dart';
 import '../../../config/config.dart';
 import '../../../logic/logic.dart';
@@ -11,6 +12,14 @@ class FeaturedProjectSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // constraints: BoxConstraints(
+      //   maxWidth: getValueForScreenType<double>(
+      //     context: context,
+      //     mobile: MediaQuery.of(context).size.width,
+      //     tablet: MediaQuery.of(context).size.width * 0.45,
+      //     desktop: MediaQuery.of(context).size.width * 0.45,
+      //   ),
+      // ),
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: AppColor.whiteBright,

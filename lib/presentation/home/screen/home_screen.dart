@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reportfolio/presentation/home/section/section.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import '../../../widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,11 +14,28 @@ class HomeScreen extends StatelessWidget {
         body: PageContainer(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const <Widget>[
-              HomeHeaderSection(),
-              AboutMeSection(),
-              FeaturedSkillsSection(),
-              FeaturedProjectSection(),
+            children: <Widget>[
+              const HomeHeaderSection(),
+              const AboutMeSection(),
+              ScreenTypeLayout.builder(
+                mobile: (context) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const <Widget>[
+                    FeaturedSkillsSection(),
+                    FeaturedProjectSection(),
+                  ],
+                ),
+                tablet: (context) => GridView.count(
+                  shrinkWrap: true,
+                  primary: false,
+                  crossAxisCount: 2,
+                  childAspectRatio: 16 / 10,
+                  children: const [
+                    FeaturedSkillsSection(),
+                    FeaturedProjectSection(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

@@ -18,7 +18,7 @@ class AppShadow {
     BoxShadow(
       color: AppColor.blackBase.withOpacity(0.01),
       blurRadius: 2,
-      spreadRadius: 0.5,
+      spreadRadius: 5,
       offset: const Offset(0, 1),
     ),
   ];
@@ -31,7 +31,7 @@ class AppShadow {
     BoxShadow(
       color: AppColor.blueBase.withOpacity(0.05),
       blurRadius: 2,
-      spreadRadius: 0.5,
+      spreadRadius: 5,
       offset: const Offset(0, 1),
     ),
   ];
