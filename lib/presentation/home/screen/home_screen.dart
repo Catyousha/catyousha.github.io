@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
             children: const <Widget>[
               HomeHeaderSection(),
               AboutMeSection(),
+              FeaturedSkillsSection(),
             ],
           ),
         ),

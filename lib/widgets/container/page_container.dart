@@ -10,28 +10,26 @@ class PageContainer extends StatelessWidget {
   final Widget child;
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraint) => SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            minHeight: constraint.maxHeight,
-            minWidth: constraint.maxWidth,
-          ),
-          child: IntrinsicHeight(
-            child: Column(
-              children: [
-                Expanded(
-                  child: Container(
-                    color: AppColor.whiteLighter,
-                    child: child,
-                  ),
-                ),
-                const FooterContainer(text: 'Jaka - Tenessine - Catyousha © 2021'),
-              ],
-            ),
+    return CustomScrollView(
+      shrinkWrap: true,
+      slivers: [
+        SliverToBoxAdapter(
+          child: Container(
+            color: AppColor.whiteLighter,
+            child: child,
           ),
         ),
-      ),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: const <Widget>[
+                FooterContainer(
+                  text: 'Jaka - Tenessine - Catyousha © 2021',
+                ),
+              ]),
+        )
+      ],
     );
   }
 }
