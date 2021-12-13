@@ -10,31 +10,31 @@ class SkillCubit extends Cubit<SkillState> {
   final SkillRepository _skillRepository;
 
   void getSkills() {
-    emit(state.copyWith(status: SkillStatus.loading));
+    emit(state.copyWith(status: SkillStateStatus.loading));
     try {
       final skillList = _skillRepository.getSkills();
       emit(state.copyWith(
-        status: SkillStatus.loading,
+        status: SkillStateStatus.loading,
         skills: skillList,
       ));
     } catch (e) {
       emit(state.copyWith(
-        status: SkillStatus.error,
+        status: SkillStateStatus.error,
       ));
     }
   }
 
   void selectSkill(int id) {
-    emit(state.copyWith(status: SkillStatus.loading));
+    emit(state.copyWith(status: SkillStateStatus.loading));
     try {
       final skill = _skillRepository.getSkill(id);
       emit(state.copyWith(
-        status: SkillStatus.loading,
+        status: SkillStateStatus.loading,
         selectedSkill: skill,
       ));
     } catch (e) {
       emit(state.copyWith(
-        status: SkillStatus.error,
+        status: SkillStateStatus.error,
       ));
     }
   }

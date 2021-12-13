@@ -36,6 +36,9 @@ class ReportfolioApp extends StatelessWidget {
         BlocProvider<SkillCubit>(
           create: (context) => SkillCubit(SkillRepository())..getSkills(),
         ),
+        BlocProvider<ProjectCubit>(
+          create: (context) => ProjectCubit(ProjectRepository())..getProjects(),
+        ),
       ],
       child: const MaterialApp(
         title: 'Jaka Asa Baldan Ahmad | Portfolio',
