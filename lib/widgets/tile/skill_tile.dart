@@ -30,10 +30,13 @@ class _SkillTileState extends State<SkillTile> {
       onExit: (event) => setState(() => isHovered = false),
       child: GestureDetector(
         onTap: widget.callback,
+        onTapDown: (details) => setState(() => isHovered = true),
+        onTapUp: (details) => setState(() => isHovered = false),
         child: Container(
           padding: const EdgeInsets.all(12),
           constraints: const BoxConstraints(
-            minWidth: 115,
+            minWidth: 50,
+            maxWidth: 250,
           ),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -51,8 +54,12 @@ class _SkillTileState extends State<SkillTile> {
                   ),
                 ),
               Container(
-                width: 90,
-                height: 90,
+                constraints: const BoxConstraints(
+                  minWidth: 45,
+                  minHeight: 45,
+                  maxWidth: 90,
+                  maxHeight: 90,
+                ),
                 decoration: BoxDecoration(
                   color: isHovered ? Colors.transparent : AppColor.whiteBright,
                   shape: BoxShape.circle,

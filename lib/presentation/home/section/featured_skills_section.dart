@@ -10,8 +10,8 @@ class FeaturedSkillsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(24),
       color: AppColor.whiteBright,
+      padding: const EdgeInsets.all(24),
       child: Column(
         children: <Widget>[
           SectionHeaderText(
@@ -20,28 +20,27 @@ class FeaturedSkillsSection extends StatelessWidget {
             isDetailed: true,
             onTapDetails: () {},
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 18),
           BlocConsumer<SkillCubit, SkillState>(
             listener: (context, state) {
               if (state.status.isInitial) {
                 context.read<SkillCubit>().getSkills();
               }
             },
-            builder: (context, state) => HorizontalCarouselScroller(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: state.skills?.map((skill) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 9.0),
+            builder: (context, state) => Row(
+              children: state.skills?.map((skill) {
+                    return Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
                         child: SkillTile(
                           title: skill.title!,
                           imgSrc: skill.imageSrc!,
                           isPinned: true,
                         ),
-                      );
-                    }).toList() ??
-                    [],
-              ),
+                      ),
+                    );
+                  }).toList() ??
+                  [],
             ),
           ),
         ],
