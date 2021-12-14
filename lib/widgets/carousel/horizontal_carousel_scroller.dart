@@ -18,6 +18,7 @@ class HorizontalCarouselScroller extends StatelessWidget {
       }),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
+        clipBehavior: Clip.none,
         child: child,
       ),
     );

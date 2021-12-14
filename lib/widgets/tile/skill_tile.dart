@@ -38,6 +38,10 @@ class _SkillTileState extends State<SkillTile> {
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
           color: AppColor.whiteBright,
+          border: Border.all(
+            color: isHovered ? AppColor.blueLighter : Colors.transparent,
+            width: isHovered ? 0.5 : 0,
+          ),
           boxShadow: !isHovered ? AppShadow.medium : AppShadow.small,
         ),
         child: Column(
@@ -59,6 +63,10 @@ class _SkillTileState extends State<SkillTile> {
               ),
               decoration: BoxDecoration(
                 color: isHovered ? Colors.transparent : AppColor.whiteBright,
+                border: Border.all(
+                  color: AppColor.blueLighter,
+                  width: 1,
+                ),
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: AssetImage(widget.imgSrc),

@@ -22,6 +22,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const <Widget>[
                     FeaturedSkillsSection(),
+                    SizedBox(height: 8),
                     FeaturedProjectSection(),
                   ],
                 ),

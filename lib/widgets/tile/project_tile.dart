@@ -40,6 +40,10 @@ class _ProjectTileState extends State<ProjectTile> {
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: isHovered ? AppColor.blueBright : Colors.transparent,
+            width: isHovered ? 0.5 : 0,
+          ),
           color: AppColor.whiteBright,
           boxShadow: !isHovered ? AppShadow.medium : AppShadow.small,
         ),
@@ -70,6 +74,10 @@ class _ProjectTileState extends State<ProjectTile> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(6),
                 color: Colors.transparent,
+                border: Border.all(
+                  color: AppColor.blueBase,
+                  width: 1,
+                ),
                 boxShadow:
                     !isHovered ? AppShadow.mediumInner : AppShadow.mediumBlue,
                 image: DecorationImage(

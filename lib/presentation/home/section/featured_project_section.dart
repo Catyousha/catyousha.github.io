@@ -25,6 +25,7 @@ class FeaturedProjectSection extends StatelessWidget {
         color: AppColor.whiteBright,
         boxShadow: AppShadow.medium,
       ),
+      clipBehavior: Clip.hardEdge,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
