@@ -3,7 +3,7 @@ import '../../../constants/constants.dart';
 import '../../repository.dart';
 
 class SkillStorage {
-  static Skill? skillByName(String name) {
+  static Skill? getSkillByName(String name) {
     return skillList.firstWhere(
       (element) => element.title?.toLowerCase() == name.toLowerCase(),
     );
@@ -24,8 +24,8 @@ class SkillStorage {
       ],
     ),
     const Skill(
-      id: 0,
-      title: 'Flutter',
+      id: 1,
+      title: 'Figma',
       catchupLine: "And so as I built, unlimited widget works!",
       learnedSince: 'August 2021',
       imageSrc: '${AssetConstant.skillImageLocation}/flutter.png',
@@ -37,8 +37,8 @@ class SkillStorage {
       ],
     ),
     const Skill(
-      id: 0,
-      title: 'Flutter',
+      id: 2,
+      title: 'Git',
       catchupLine: "And so as I built, unlimited widget works!",
       learnedSince: 'August 2021',
       imageSrc: '${AssetConstant.skillImageLocation}/flutter.png',

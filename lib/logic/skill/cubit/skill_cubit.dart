@@ -24,6 +24,24 @@ class SkillCubit extends Cubit<SkillState> {
     }
   }
 
+  void getFeaturedSkills() {
+    emit(state.copyWith(status: SkillStateStatus.loading));
+    try {
+      emit(state.copyWith(
+        status: SkillStateStatus.loading,
+        featuredSkills: [
+          _skillRepository.getSkillByName('Flutter'),
+          _skillRepository.getSkillByName('Flutter'),
+          _skillRepository.getSkillByName('Flutter'),
+        ],
+      ));
+    } catch (e) {
+      emit(state.copyWith(
+        status: SkillStateStatus.error,
+      ));
+    }
+  }
+
   void selectSkill(int id) {
     emit(state.copyWith(status: SkillStateStatus.loading));
     try {

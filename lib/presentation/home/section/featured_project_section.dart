@@ -11,15 +11,8 @@ class FeaturedProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<ProjectCubit>().getFeaturedProjects();
     return Container(
-      // constraints: BoxConstraints(
-      //   maxWidth: getValueForScreenType<double>(
-      //     context: context,
-      //     mobile: MediaQuery.of(context).size.width,
-      //     tablet: MediaQuery.of(context).size.width * 0.45,
-      //     desktop: MediaQuery.of(context).size.width * 0.45,
-      //   ),
-      // ),
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: AppColor.whiteBright,
@@ -38,8 +31,8 @@ class FeaturedProjectSection extends StatelessWidget {
           const SizedBox(height: 18),
           BlocConsumer<ProjectCubit, ProjectState>(
             listener: (context, state) {
-              if (state.status.isInitial) {
-                context.read<ProjectCubit>().getProjects();
+              if (state.featuredProjects == null) {
+                context.read<ProjectCubit>().getFeaturedProjects();
               }
             },
             builder: (context, state) {

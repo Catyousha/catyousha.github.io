@@ -8,4 +8,8 @@ class SkillRepository {
   Skill getSkill(int id) {
     return SkillStorage.skillList.firstWhere((skill) => skill.id == id);
   }
+
+  Skill? getSkillByName(String name) {
+    return SkillStorage.getSkillByName(name);
+  }
 }

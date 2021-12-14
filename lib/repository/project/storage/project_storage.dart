@@ -21,12 +21,12 @@ class ProjectStorage {
         '${AssetConstant.projectImageLocation}/Dorplas - 1.png',
       ],
       skills: [
-        SkillStorage.skillByName('Flutter'),
+        SkillStorage.getSkillByName('Flutter'),
       ],
       repoUrl: 'http://example.com',
     ),
     Project(
-      id: 0,
+      id: 1,
       title: 'Dorplas - Donor Plasma',
       type: ProjectType.project,
       overview: 'Done this project on Studi Independent at GITS.',
@@ -43,12 +43,12 @@ class ProjectStorage {
         '${AssetConstant.projectImageLocation}/Dorplas - 1.png',
       ],
       skills: [
-        SkillStorage.skillByName('Flutter'),
+        SkillStorage.getSkillByName('Flutter'),
       ],
       repoUrl: 'http://example.com',
     ),
     Project(
-      id: 0,
+      id: 2,
       title: 'Dorplas - Donor Plasma',
       type: ProjectType.project,
       overview: 'Done this project on Studi Independent at GITS.',
@@ -65,7 +65,7 @@ class ProjectStorage {
         '${AssetConstant.projectImageLocation}/Dorplas - 1.png',
       ],
       skills: [
-        SkillStorage.skillByName('Flutter'),
+        SkillStorage.getSkillByName('Flutter'),
       ],
       repoUrl: 'http://example.com',
     ),

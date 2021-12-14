@@ -24,6 +24,24 @@ class ProjectCubit extends Cubit<ProjectState> {
     }
   }
 
+  void getFeaturedProjects() {
+    emit(state.copyWith(status: ProjectStateStatus.loading));
+    try {
+      emit(state.copyWith(
+        status: ProjectStateStatus.loaded,
+        featuredProjects: [
+          _projectRepository.getProject(0),
+          _projectRepository.getProject(0),
+          _projectRepository.getProject(0),
+        ],
+      ));
+    } catch (e) {
+      emit(state.copyWith(
+        status: ProjectStateStatus.error,
+      ));
+    }
+  }
+
   void selectProject(int id) {
     emit(state.copyWith(status: ProjectStateStatus.loading));
     try {

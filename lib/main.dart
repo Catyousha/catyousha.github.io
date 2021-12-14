@@ -3,6 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'config/config.dart';
 import 'logic/logic.dart';
 import 'repository/repository.dart';
@@ -36,6 +37,7 @@ class ReportfolioApp extends StatefulWidget {
 
 class _ReportfolioAppState extends State<ReportfolioApp> {
   _ReportfolioAppState() {
+    /// Fluro Router Initialization
     final router = FluroRouter();
     Routes.configureRoutes(router);
     ApplicationRouter.router = router;

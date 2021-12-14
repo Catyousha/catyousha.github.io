@@ -15,13 +15,15 @@ extension ProjectStateStatusExt on ProjectStateStatus {
 }
 
 class ProjectState extends Equatable {
-  ProjectStateStatus status;
-  List<Project>? projects;
-  Project? selectedProject;
+  final ProjectStateStatus status;
+  final List<Project>? projects;
+  final Project? selectedProject;
+  final List<Project?>? featuredProjects;
 
-  ProjectState({
+  const ProjectState({
     this.status = ProjectStateStatus.initial,
     this.projects,
+    this.featuredProjects,
     this.selectedProject,
   });
 
@@ -29,11 +31,13 @@ class ProjectState extends Equatable {
   ProjectState copyWith({
     ProjectStateStatus? status,
     List<Project>? projects,
+    List<Project?>? featuredProjects,
     Project? selectedProject,
   }) {
     return ProjectState(
       status: status ?? this.status,
       projects: projects ?? this.projects,
+      featuredProjects: featuredProjects ?? this.featuredProjects,
       selectedProject: selectedProject ?? this.selectedProject,
     );
   }
@@ -44,5 +48,6 @@ class ProjectState extends Equatable {
         status,
         projects,
         selectedProject,
+        featuredProjects,
       ];
 }

@@ -17,11 +17,13 @@ extension SkillStateStatusExt on SkillStateStatus {
 class SkillState extends Equatable {
   final SkillStateStatus status;
   final List<Skill>? skills;
+  final List<Skill?>? featuredSkills;
   final Skill? selectedSkill;
 
   const SkillState({
     this.status = SkillStateStatus.initial,
     this.skills,
+    this.featuredSkills,
     this.selectedSkill,
   });
 
@@ -29,11 +31,13 @@ class SkillState extends Equatable {
   SkillState copyWith({
     SkillStateStatus? status,
     List<Skill>? skills,
+    List<Skill?>? featuredSkills,
     Skill? selectedSkill,
   }) {
     return SkillState(
       status: status ?? this.status,
       skills: skills ?? this.skills,
+      featuredSkills: featuredSkills ?? this.featuredSkills,
       selectedSkill: selectedSkill ?? this.selectedSkill,
     );
   }
@@ -42,6 +46,7 @@ class SkillState extends Equatable {
   List<Object?> get props => [
         status,
         skills,
+        featuredSkills,
         selectedSkill,
       ];
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import '../../../logic/logic.dart';
 import '../../../widgets/widgets.dart';
 import '../../../config/config.dart';
@@ -10,15 +9,8 @@ class FeaturedSkillsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<SkillCubit>().getFeaturedSkills();
     return Container(
-      // constraints: BoxConstraints(
-      //   maxWidth: getValueForScreenType<double>(
-      //     context: context,
-      //     mobile: MediaQuery.of(context).size.width,
-      //     tablet: MediaQuery.of(context).size.width * 0.45,
-      //     desktop: MediaQuery.of(context).size.width * 0.45,
-      //   ),
-      // ),
       color: AppColor.whiteBright,
       padding: const EdgeInsets.all(18),
       child: Column(
@@ -33,17 +25,17 @@ class FeaturedSkillsSection extends StatelessWidget {
           BlocConsumer<SkillCubit, SkillState>(
             listener: (context, state) {
               if (state.status.isInitial) {
-                context.read<SkillCubit>().getSkills();
+                context.read<SkillCubit>().getFeaturedSkills();
               }
             },
             builder: (context, state) => Row(
               mainAxisSize: MainAxisSize.min,
-              children: state.skills?.map((skill) {
+              children: state.featuredSkills?.map((skill) {
                     return Expanded(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 4.0),
                         child: SkillTile(
-                          title: skill.title!,
+                          title: skill!.title!,
                           imgSrc: skill.imageSrc!,
                           isPinned: true,
                         ),
