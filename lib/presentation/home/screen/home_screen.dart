@@ -10,7 +10,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
         body: PageContainer(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

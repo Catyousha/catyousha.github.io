@@ -19,7 +19,9 @@ class FeaturedSkillsSection extends StatelessWidget {
             icon: Icons.code,
             title: 'Featured Skills',
             isDetailed: true,
-            onTapDetails: () {},
+            onTapDetails: () {
+              Navigator.pushNamed(context, Routes.skills);
+            },
           ),
           const SizedBox(height: 18),
           BlocConsumer<SkillCubit, SkillState>(

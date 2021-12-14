@@ -40,8 +40,14 @@ class SectionHeaderText extends StatelessWidget {
           ],
         ),
         if (isDetailed)
-          GestureDetector(
-            onTap: onTapDetails,
+          TextButton(
+            style: TextButton.styleFrom(
+              primary: AppColor.blueLighter,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            onPressed: onTapDetails,
             child: Text(
               'View All',
               style: AppText.textNormal.copyWith(
