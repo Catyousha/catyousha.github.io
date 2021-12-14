@@ -1,10 +1,10 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'config/config.dart';
 import 'logic/logic.dart';
-
 import 'repository/repository.dart';
 
 void main(List<String> args) async {
@@ -14,6 +14,7 @@ void main(List<String> args) async {
     statusBarColor: AppColor.blueBase,
     statusBarBrightness: Brightness.dark,
   ));
+
   runApp(DevicePreview(
     enabled: true,
     builder: (context) {
@@ -26,8 +27,19 @@ void main(List<String> args) async {
   // ]).then((value) => runApp(const ReportfolioApp()));
 }
 
-class ReportfolioApp extends StatelessWidget {
+class ReportfolioApp extends StatefulWidget {
   const ReportfolioApp({Key? key}) : super(key: key);
+
+  @override
+  State<ReportfolioApp> createState() => _ReportfolioAppState();
+}
+
+class _ReportfolioAppState extends State<ReportfolioApp> {
+  _ReportfolioAppState() {
+    final router = FluroRouter();
+    Routes.configureRoutes(router);
+    ApplicationRouter.router = router;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +56,11 @@ class ReportfolioApp extends StatelessWidget {
           create: (context) => SkillCubit(SkillRepository())..getSkills(),
         ),
       ],
-      child: const MaterialApp(
+      child: MaterialApp(
         title: 'Jaka Asa Baldan Ahmad | Portfolio',
         useInheritedMediaQuery: true,
         builder: DevicePreview.appBuilder,
-        onGenerateRoute: RouteController.controller,
+        onGenerateRoute: ApplicationRouter.router.generator,
         initialRoute: Routes.initial,
         debugShowCheckedModeBanner: false,
       ),
