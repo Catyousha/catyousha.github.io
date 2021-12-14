@@ -25,11 +25,7 @@ class FeaturedSkillsSection extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           BlocConsumer<SkillCubit, SkillState>(
-            listener: (context, state) {
-              if (state.status.isInitial) {
-                context.read<SkillCubit>().getFeaturedSkills();
-              }
-            },
+            listener: (context, state) {},
             builder: (context, state) => Row(
               mainAxisSize: MainAxisSize.min,
               children: state.featuredSkills?.map((skill) {

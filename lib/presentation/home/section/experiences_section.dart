@@ -19,11 +19,7 @@ class ExperiencesSection extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           BlocConsumer<ExperienceCubit, ExperienceState>(
-            listener: (context, state) {
-              if (state.status.isInitial) {
-                context.read<ExperienceCubit>().getExperiences();
-              }
-            },
+            listener: (context, state) {},
             builder: (context, state) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

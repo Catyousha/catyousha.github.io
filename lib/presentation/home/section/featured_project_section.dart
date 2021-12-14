@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import '../../../repository/repository.dart';
 import '../../../config/config.dart';
 import '../../../logic/logic.dart';
@@ -30,11 +29,7 @@ class FeaturedProjectSection extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           BlocConsumer<ProjectCubit, ProjectState>(
-            listener: (context, state) {
-              if (state.featuredProjects == null) {
-                context.read<ProjectCubit>().getFeaturedProjects();
-              }
-            },
+            listener: (context, state) {},
             builder: (context, state) {
               return HorizontalCarouselScroller(
                 child: Row(
