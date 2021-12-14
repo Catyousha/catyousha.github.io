@@ -24,6 +24,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       leading: IconButton(
+        splashRadius: 24,
         icon: Icon(
           leadingIcon ?? Icons.chevron_left,
           color: AppColor.whiteBright,
