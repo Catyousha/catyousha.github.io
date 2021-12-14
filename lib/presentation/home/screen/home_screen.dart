@@ -25,6 +25,10 @@ class HomeScreen extends StatelessWidget {
                     FeaturedSkillsSection(),
                     SizedBox(height: 8),
                     FeaturedProjectSection(),
+                    SizedBox(height: 8),
+                    EducationSection(),
+                    SizedBox(height: 8),
+                    ExperiencesSection(),
                   ],
                 ),
                 tablet: (context) => GridView.count(
@@ -35,10 +39,11 @@ class HomeScreen extends StatelessWidget {
                   children: const [
                     FeaturedSkillsSection(),
                     FeaturedProjectSection(),
+                    EducationSection(),
+                    ExperiencesSection(),
                   ],
                 ),
               ),
-              const EducationSection(),
             ],
           ),
         ),

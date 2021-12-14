@@ -50,6 +50,7 @@ class FeaturedProjectSection extends StatelessWidget {
                         return Padding(
                           padding: const EdgeInsets.only(right: 8.0),
                           child: ProjectTile(
+                            isPinned: true,
                             type: project.type!.text,
                             imageSrc: project.images!.first,
                             title: project.title!,

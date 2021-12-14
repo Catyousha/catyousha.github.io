@@ -7,6 +7,13 @@ enum ExperienceStateStatus {
   error,
 }
 
+extension ExperienceStateStatusExt on ExperienceStateStatus {
+  bool get isInitial => this == ExperienceStateStatus.initial;
+  bool get isLoading => this == ExperienceStateStatus.loading;
+  bool get isLoaded => this == ExperienceStateStatus.loaded;
+  bool get isError => this == ExperienceStateStatus.error;
+}
+
 class ExperienceState extends Equatable {
   final List<Experience>? experiences;
   final ExperienceStateStatus status;

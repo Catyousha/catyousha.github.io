@@ -13,7 +13,7 @@ class ExperienceStorage {
     ),
     const Experience(
       id: 1,
-      title: 'Workshop Elektro1',
+      title: 'Workshop Elektro',
       position: 'Web Subdivision, Person In Charge',
       timeDesc: 'Feb 2020 - 2022',
       imageSrc: '${AssetConstant.experienceImageLocation}/WSE.png',

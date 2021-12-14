@@ -37,6 +37,9 @@ class _ProjectTileState extends State<ProjectTile> {
       onUnhovered: () => setState(() => isHovered = false),
       onPressed: widget.callback,
       child: Container(
+        constraints: const BoxConstraints(
+          maxWidth: 240,
+        ),
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -51,14 +54,18 @@ class _ProjectTileState extends State<ProjectTile> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             if (widget.isPinned)
-              const Padding(
-                padding: EdgeInsets.only(bottom: 8),
-                child: Center(
-                  child: Icon(
-                    Icons.push_pin,
-                    color: AppColor.blueBase,
-                    size: 12,
-                  ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Row(
+                  children: const [
+                    Expanded(
+                      child: Icon(
+                        Icons.push_pin,
+                        color: AppColor.blueBase,
+                        size: 12,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             Text(widget.type,
@@ -90,7 +97,7 @@ class _ProjectTileState extends State<ProjectTile> {
             SizedBox(
               height: 38,
               child: Align(
-                alignment: Alignment.center,
+                alignment: Alignment.centerLeft,
                 child: Text(
                   widget.title,
                   style: AppText.textMedium.copyWith(

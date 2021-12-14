@@ -33,11 +33,15 @@ class ReportfolioApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<SkillCubit>(
-          create: (context) => SkillCubit(SkillRepository())..getSkills(),
+        BlocProvider<ExperienceCubit>(
+          create: (context) =>
+              ExperienceCubit(ExperienceRepository())..getExperiences(),
         ),
         BlocProvider<ProjectCubit>(
           create: (context) => ProjectCubit(ProjectRepository())..getProjects(),
+        ),
+        BlocProvider<SkillCubit>(
+          create: (context) => SkillCubit(SkillRepository())..getSkills(),
         ),
       ],
       child: const MaterialApp(
