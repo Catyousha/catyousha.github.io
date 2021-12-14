@@ -69,6 +69,7 @@ flutter:
     - assets/bitmap/
     - assets/bitmap/skills/
     - assets/bitmap/projects/
+    - assets/bitmap/experiences/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
