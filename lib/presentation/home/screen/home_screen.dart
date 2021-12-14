@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:reportfolio/presentation/home/section/education_section.dart';
-import 'package:reportfolio/presentation/home/section/section.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../../../widgets/widgets.dart';
+import '../section/section.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -44,6 +43,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              const ContactSection(),
             ],
           ),
         ),

@@ -3,4 +3,5 @@ class AssetConstant {
   static const skillImageLocation = 'assets/bitmap/skills';
   static const projectImageLocation = 'assets/bitmap/projects';
   static const experienceImageLocation = 'assets/bitmap/experiences';
+  static const contactImageLocation = 'assets/bitmap/contacts';
 }
