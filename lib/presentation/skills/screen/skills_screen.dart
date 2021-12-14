@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:reportfolio/logic/logic.dart';
-import 'package:reportfolio/widgets/widgets.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import '../../../config/config.dart';
+import '../../../logic/logic.dart';
+import '../../../widgets/widgets.dart';
 
 class SkillsScreen extends StatelessWidget {
   const SkillsScreen({Key? key}) : super(key: key);
@@ -48,6 +49,12 @@ class SkillsScreen extends StatelessWidget {
                             return SkillTile(
                               title: e.title!,
                               imgSrc: e.imageSrc!,
+                              callback: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  "${Routes.skillDetail}/${e.id}",
+                                );
+                              },
                             );
                           }).toList() ??
                           [],

@@ -40,6 +40,12 @@ class FeaturedSkillsSection extends StatelessWidget {
                           title: skill!.title!,
                           imgSrc: skill.imageSrc!,
                           isPinned: true,
+                          callback: () {
+                            Navigator.pushNamed(
+                              context,
+                              "${Routes.skillDetail}/${skill.id}",
+                            );
+                          },
                         ),
                       ),
                     );
