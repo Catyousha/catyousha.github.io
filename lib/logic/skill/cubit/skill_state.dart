@@ -19,12 +19,14 @@ class SkillState extends Equatable {
   final List<Skill>? skills;
   final List<Skill?>? featuredSkills;
   final Skill? selectedSkill;
+  final List<Project>? skillProjects;
 
   const SkillState({
     this.status = SkillStateStatus.initial,
     this.skills,
     this.featuredSkills,
     this.selectedSkill,
+    this.skillProjects,
   });
 
   //copywith
@@ -33,12 +35,14 @@ class SkillState extends Equatable {
     List<Skill>? skills,
     List<Skill?>? featuredSkills,
     Skill? selectedSkill,
+    List<Project>? skillProjects,
   }) {
     return SkillState(
       status: status ?? this.status,
       skills: skills ?? this.skills,
       featuredSkills: featuredSkills ?? this.featuredSkills,
       selectedSkill: selectedSkill ?? this.selectedSkill,
+      skillProjects: skillProjects ?? this.skillProjects,
     );
   }
 
@@ -48,5 +52,6 @@ class SkillState extends Equatable {
         skills,
         featuredSkills,
         selectedSkill,
+        skillProjects,
       ];
 }

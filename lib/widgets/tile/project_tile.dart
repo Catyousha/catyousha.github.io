@@ -38,7 +38,7 @@ class _ProjectTileState extends State<ProjectTile> {
       onPressed: widget.callback,
       child: Container(
         constraints: const BoxConstraints(
-          maxWidth: 240,
+          maxWidth: 320,
         ),
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
