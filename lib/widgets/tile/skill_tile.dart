@@ -32,7 +32,7 @@ class _SkillTileState extends State<SkillTile> {
       child: Container(
         padding: const EdgeInsets.all(12),
         constraints: const BoxConstraints(
-          minWidth: 50,
+          minWidth: 45,
           maxWidth: 250,
         ),
         decoration: BoxDecoration(

@@ -23,9 +23,9 @@ class PageContainer extends StatelessWidget {
           hasScrollBody: false,
           child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const <Widget>[
+              children: <Widget>[
                 FooterContainer(
-                  text: 'Jaka - Tenessine - Catyousha © 2021',
+                  text: 'Jaka - Tenessine - Catyousha © ${DateTime.now().year}',
                 ),
               ]),
         )

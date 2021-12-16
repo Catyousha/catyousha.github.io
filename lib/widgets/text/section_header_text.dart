@@ -21,23 +21,23 @@ class SectionHeaderText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Row(
-          children: <Widget>[
-            Icon(
-              icon,
-              color: iconColor,
-              size: 24,
+        Icon(
+          icon,
+          color: iconColor,
+          size: 24,
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Text(
+            title,
+            style: AppText.textSemiLarge.copyWith(
+              color: titleColor,
             ),
-            const SizedBox(width: 8),
-            Text(
-              title,
-              style: AppText.textSemiLarge.copyWith(
-                color: titleColor,
-              ),
-            ),
-          ],
+            softWrap: true,
+            maxLines: 3,
+            overflow: TextOverflow.ellipsis,
+          ),
         ),
         if (isDetailed)
           TextButton(

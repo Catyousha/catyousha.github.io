@@ -33,18 +33,9 @@ class SkillsScreen extends StatelessWidget {
                   }
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: GridView.count(
-                      primary: false,
-                      clipBehavior: Clip.none,
-                      mainAxisSpacing: 2,
-                      crossAxisSpacing: 2,
-                      crossAxisCount: 3,
-                      childAspectRatio: getValueForScreenType(
-                        context: context,
-                        mobile: 0.75,
-                        tablet: 3,
-                      ),
-                      shrinkWrap: true,
+                    child: Wrap(
+                      spacing: 2,
+                      runSpacing: 2,
                       children: state.skills?.map((e) {
                             return SkillTile(
                               title: e.title!,

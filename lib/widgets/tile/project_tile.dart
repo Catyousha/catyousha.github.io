@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reportfolio/config/config.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 import '../widgets.dart';
 
@@ -51,6 +52,7 @@ class _ProjectTileState extends State<ProjectTile> {
           boxShadow: !isHovered ? AppShadow.medium : AppShadow.small,
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             if (widget.isPinned)
