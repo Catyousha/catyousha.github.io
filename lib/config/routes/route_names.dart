@@ -7,12 +7,15 @@ class Routes {
   static const home = '/';
   static const skills = '/skills';
   static const skillDetail = '/skills/d/';
+  static const projects = '/projects';
+  static const projectDetail = '/projects/d/';
 
   static void configureRoutes(FluroRouter router) {
     router.define(home,
         handler: RouteHandlers.staticPageHandler(
           const HomeScreen(),
         ));
+
     router.define(skills,
         handler: RouteHandlers.staticPageHandler(
           const SkillsScreen(),
@@ -23,5 +26,11 @@ class Routes {
         return SkillDetailScreen(id: params['id']![0]);
       },
     ), transitionType: TransitionType.fadeIn);
+
+    router.define(projects,
+        handler: RouteHandlers.staticPageHandler(
+          const ProjectsScreen(),
+        ),
+        transitionType: TransitionType.fadeIn);
   }
 }
