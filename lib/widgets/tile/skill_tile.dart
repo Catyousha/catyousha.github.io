@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import '../../config/config.dart';
 import '../widgets.dart';
 
@@ -31,15 +32,16 @@ class _SkillTileState extends State<SkillTile> {
       onPressed: widget.callback,
       child: Container(
         padding: const EdgeInsets.all(12),
-        constraints: const BoxConstraints(
-          minWidth: 45,
-          maxWidth: 250,
+        width: getValueForScreenType(
+          context: context,
+          mobile: 120,
+          tablet: 250,
         ),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
           color: AppColor.whiteBright,
           border: Border.all(
-            color: isHovered ? AppColor.blueLighter : Colors.transparent,
+            color: isHovered ? AppColor.blueBright : Colors.transparent,
             width: isHovered ? 0.5 : 0,
           ),
           boxShadow: !isHovered ? AppShadow.medium : AppShadow.small,
@@ -54,25 +56,21 @@ class _SkillTileState extends State<SkillTile> {
                   size: 12,
                 ),
               ),
-            Container(
-              constraints: const BoxConstraints(
-                minWidth: 45,
-                minHeight: 45,
-                maxWidth: 90,
-                maxHeight: 90,
-              ),
-              decoration: BoxDecoration(
-                color: isHovered ? Colors.transparent : AppColor.whiteBright,
-                border: Border.all(
-                  color: AppColor.blueLighter,
-                  width: 1,
+            Hero(
+              tag: widget.title,
+              child: Container(
+                width: 90,
+                height: 90,
+                decoration: BoxDecoration(
+                  color: isHovered ? Colors.transparent : AppColor.whiteBright,
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: AssetImage(widget.imgSrc),
+                    fit: BoxFit.cover,
+                  ),
+                  boxShadow:
+                      isHovered ? AppShadow.mediumInner : AppShadow.small,
                 ),
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage(widget.imgSrc),
-                  fit: BoxFit.cover,
-                ),
-                boxShadow: isHovered ? AppShadow.mediumInner : AppShadow.small,
               ),
             ),
             const SizedBox(height: 18),

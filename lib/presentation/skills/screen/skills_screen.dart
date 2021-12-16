@@ -32,23 +32,32 @@ class SkillsScreen extends StatelessWidget {
                     return const CircularProgressIndicator();
                   }
                   return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Wrap(
-                      spacing: 2,
-                      runSpacing: 2,
-                      children: state.skills?.map((e) {
-                            return SkillTile(
-                              title: e.title!,
-                              imgSrc: e.imageSrc!,
-                              callback: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  "${Routes.skillDetail}/${e.id}",
-                                );
-                              },
-                            );
-                          }).toList() ??
-                          [],
+                    padding: EdgeInsets.all(getValueForScreenType(
+                      context: context,
+                      mobile: 8,
+                      tablet: 24,
+                    )),
+                    child: Center(
+                      child: Wrap(
+                        alignment: WrapAlignment.center,
+                        runAlignment: WrapAlignment.center,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        spacing: 2,
+                        runSpacing: 2,
+                        children: state.skills?.map((e) {
+                              return SkillTile(
+                                title: e.title!,
+                                imgSrc: e.imageSrc!,
+                                callback: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    "${Routes.skillDetail}/${e.id}",
+                                  );
+                                },
+                              );
+                            }).toList() ??
+                            [],
+                      ),
                     ),
                   );
                 },

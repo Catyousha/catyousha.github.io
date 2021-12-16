@@ -28,17 +28,20 @@ class SkillHeaderSection extends StatelessWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Container(
-                width: 65,
-                height: 65,
-                decoration: BoxDecoration(
-                  color: AppColor.whiteBright,
-                  image: DecorationImage(
-                    image: AssetImage(imageSrc),
-                    fit: BoxFit.cover,
+              Hero(
+                tag: title,
+                child: Container(
+                  width: 65,
+                  height: 65,
+                  decoration: BoxDecoration(
+                    color: AppColor.whiteBright,
+                    image: DecorationImage(
+                      image: AssetImage(imageSrc),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: AppShadow.medium,
                   ),
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: AppShadow.medium,
                 ),
               ),
               const SizedBox(width: 24),

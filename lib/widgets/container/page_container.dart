@@ -21,13 +21,17 @@ class PageContainer extends StatelessWidget {
         ),
         SliverFillRemaining(
           hasScrollBody: false,
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                FooterContainer(
-                  text: 'Jaka - Tenessine - Catyousha © ${DateTime.now().year}',
-                ),
-              ]),
+          child: Container(
+            color: AppColor.whiteLighter,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  FooterContainer(
+                    text:
+                        'Jaka - Tenessine - Catyousha © ${DateTime.now().year}',
+                  ),
+                ]),
+          ),
         )
       ],
     );
