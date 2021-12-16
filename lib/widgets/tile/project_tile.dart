@@ -55,86 +55,63 @@ class _ProjectTileState extends State<ProjectTile> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            if (widget.isPinned)
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Row(
-                  children: const [
-                    Expanded(
-                      child: Icon(
-                        Icons.push_pin,
-                        color: AppColor.blueBase,
-                        size: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
             Text(widget.type,
                 style: AppText.textSmall.copyWith(
                   fontWeight: AppFontWeight.bold,
                 )),
             const SizedBox(height: 8),
-            Container(
-              constraints: const BoxConstraints(
-                maxWidth: 160,
-                maxHeight: 90,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6),
-                color: Colors.transparent,
-                border: Border.all(
-                  color: AppColor.blueBase,
-                  width: 1,
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Image.asset(
+                  widget.imageSrc,
+                  width: 110,
+                  height: 75,
+                  fit: BoxFit.fill,
                 ),
-                boxShadow:
-                    !isHovered ? AppShadow.mediumInner : AppShadow.mediumBlue,
-                image: DecorationImage(
-                  image: AssetImage(widget.imageSrc),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            const SizedBox(height: 8),
-            SizedBox(
-              height: 38,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  widget.title,
-                  style: AppText.textMedium.copyWith(
-                    fontWeight: AppFontWeight.bold,
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(
+                        height: 38,
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            widget.title,
+                            style: AppText.textMedium.copyWith(
+                              fontWeight: AppFontWeight.bold,
+                            ),
+                            softWrap: true,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      SizedBox(
+                        height: 40,
+                        child: Text(
+                          widget.overview,
+                          style: AppText.textSmall,
+                          softWrap: true,
+                          maxLines: 4,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
                   ),
-                  softWrap: true,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
                 ),
-              ),
+              ],
             ),
             const SizedBox(height: 8),
-            SizedBox(
-              height: 40,
-              child: Text(
-                widget.overview,
-                style: AppText.textSmall,
-                softWrap: true,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            const SizedBox(height: 8),
-            ConstrainedBox(
-              constraints: const BoxConstraints(
-                maxWidth: 160,
-                maxHeight: 40,
-              ),
-              child: Wrap(
-                spacing: 4,
-                runSpacing: 4,
-                children: widget.skills.map((e) {
-                  return SkillPill(label: e);
-                }).toList(),
-              ),
+            Wrap(
+              spacing: 4,
+              runSpacing: 4,
+              children: widget.skills.map((e) {
+                return SkillPill(label: e);
+              }).toList(),
             ),
           ],
         ),

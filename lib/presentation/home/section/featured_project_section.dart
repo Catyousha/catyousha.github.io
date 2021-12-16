@@ -31,26 +31,21 @@ class FeaturedProjectSection extends StatelessWidget {
           BlocConsumer<ProjectCubit, ProjectState>(
             listener: (context, state) {},
             builder: (context, state) {
-              return HorizontalCarouselScroller(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: state.projects?.map((project) {
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 8.0),
-                          child: ProjectTile(
-                            isPinned: true,
-                            type: project.type!.text,
-                            imageSrc: project.images!.first,
-                            title: project.title!,
-                            overview: project.overview!,
-                            skills: project.skills!
-                                .map((skill) => skill!.title!)
-                                .toList(),
-                          ),
-                        );
-                      }).toList() ??
-                      [],
-                ),
+              return Wrap(
+                spacing: 18,
+                runSpacing: 18,
+                children: state.projects?.map((project) {
+                      return ProjectTile(
+                        type: project.type!.text,
+                        imageSrc: project.images!.first,
+                        title: project.title!,
+                        overview: project.overview!,
+                        skills: project.skills!
+                            .map((skill) => skill!.title!)
+                            .toList(),
+                      );
+                    }).toList() ??
+                    [],
               );
             },
           ),

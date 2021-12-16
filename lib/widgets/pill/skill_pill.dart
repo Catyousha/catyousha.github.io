@@ -20,11 +20,11 @@ class SkillPill extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           color: AppColor.blueLight,
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(4),
         ),
         child: Center(
           child: Text(label,
-              style: AppText.textSmall.copyWith(
+              style: AppText.textExtraSmall.copyWith(
                 fontWeight: AppFontWeight.bold,
                 color: AppColor.whiteLight,
               )),

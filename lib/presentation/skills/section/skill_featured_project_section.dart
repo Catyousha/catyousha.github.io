@@ -31,6 +31,8 @@ class SkillFeaturedProjectSection extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           Wrap(
+            spacing: 8,
+            runSpacing: 8,
             children: projects.map((project) {
               return ProjectTile(
                 imageSrc: project.images![0],
