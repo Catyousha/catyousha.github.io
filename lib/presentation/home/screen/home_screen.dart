@@ -29,18 +29,48 @@ class HomeScreen extends StatelessWidget {
                     ExperiencesSection(),
                   ],
                 ),
-                tablet: (context) => GridView.count(
-                  shrinkWrap: true,
-                  primary: false,
-                  crossAxisCount: 2,
-                  childAspectRatio: 16 / 10,
-                  children: const [
-                    FeaturedSkillsSection(),
-                    FeaturedProjectSection(),
-                    EducationSection(),
-                    ExperiencesSection(),
+                desktop: (context) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const <Widget>[
+                        Expanded(
+                          child: FeaturedSkillsSection(),
+                        ),
+                        SizedBox(width: 36),
+                        Expanded(
+                          child: FeaturedProjectSection(),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 24),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const <Widget>[
+                        Expanded(
+                          child: EducationSection(),
+                        ),
+                        Expanded(
+                          child: ExperiencesSection(),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
+                // tablet: (context) => GridView.count(
+                //   shrinkWrap: true,
+                //   primary: false,
+                //   crossAxisCount: 2,
+                //   childAspectRatio: 16 / 12,
+                //   children: const [
+                //     FeaturedSkillsSection(),
+                //     FeaturedProjectSection(),
+                //     EducationSection(),
+                //     ExperiencesSection(),
+                //   ],
+                // ),
               ),
               const ContactSection(),
             ],

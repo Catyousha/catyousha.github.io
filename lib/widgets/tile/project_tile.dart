@@ -38,8 +38,13 @@ class _ProjectTileState extends State<ProjectTile> {
       onUnhovered: () => setState(() => isHovered = false),
       onPressed: widget.callback,
       child: Container(
-        constraints: const BoxConstraints(
-          maxWidth: 320,
+        constraints: BoxConstraints(
+          maxWidth: getValueForScreenType(
+            context: context,
+            mobile: 560,
+            tablet: 320,
+            desktop: 280,
+          ),
         ),
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(

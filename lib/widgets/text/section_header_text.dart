@@ -11,7 +11,7 @@ class SectionHeaderText extends StatelessWidget {
     this.isDetailed = false,
     this.onTapDetails,
   }) : super(key: key);
-
+  
   final IconData icon;
   final Color iconColor;
   final String title;

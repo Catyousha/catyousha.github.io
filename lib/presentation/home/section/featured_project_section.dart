@@ -25,27 +25,31 @@ class FeaturedProjectSection extends StatelessWidget {
             icon: Icons.source,
             title: 'Featured Projects',
             isDetailed: true,
-            onTapDetails: () {},
+            onTapDetails: () {
+              Navigator.of(context).pushNamed(Routes.projects);
+            },
           ),
           const SizedBox(height: 18),
           BlocConsumer<ProjectCubit, ProjectState>(
             listener: (context, state) {},
             builder: (context, state) {
-              return Wrap(
-                spacing: 18,
-                runSpacing: 18,
-                children: state.projects?.map((project) {
-                      return ProjectTile(
-                        type: project.type!.text,
-                        imageSrc: project.images!.first,
-                        title: project.title!,
-                        overview: project.overview!,
-                        skills: project.skills!
-                            .map((skill) => skill!.title!)
-                            .toList(),
-                      );
-                    }).toList() ??
-                    [],
+              return Center(
+                child: Wrap(
+                  spacing: 18,
+                  runSpacing: 18,
+                  children: state.featuredProjects?.map((project) {
+                        return ProjectTile(
+                          type: project!.type!.text,
+                          imageSrc: project.images!.first,
+                          title: project.title!,
+                          overview: project.overview!,
+                          skills: project.skills!
+                              .map((skill) => skill!.title!)
+                              .toList(),
+                        );
+                      }).toList() ??
+                      [],
+                ),
               );
             },
           ),

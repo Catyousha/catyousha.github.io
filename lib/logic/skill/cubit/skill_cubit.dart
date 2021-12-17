@@ -31,8 +31,8 @@ class SkillCubit extends Cubit<SkillState> {
         status: SkillStateStatus.loading,
         featuredSkills: [
           _skillRepository.getSkillByName('Flutter'),
-          _skillRepository.getSkillByName('Flutter'),
-          _skillRepository.getSkillByName('Flutter'),
+          _skillRepository.getSkillByName('Git'),
+          _skillRepository.getSkillByName('Figma'),
         ],
       ));
     } catch (e) {
