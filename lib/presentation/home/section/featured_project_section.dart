@@ -14,8 +14,8 @@ class FeaturedProjectSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: const BoxDecoration(
-        // color: AppColor.whiteBright,
-      ),
+          // color: AppColor.whiteBright,
+          ),
       clipBehavior: Clip.hardEdge,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,6 +37,10 @@ class FeaturedProjectSection extends StatelessWidget {
                 runSpacing: 18,
                 children: state.featuredProjects?.map((project) {
                       return ProjectTile(
+                        callback: () {
+                          Navigator.of(context).pushNamed(
+                              "${Routes.projectDetail}/${project!.id}");
+                        },
                         type: project!.type!.text,
                         imageSrc: project.images!.first,
                         title: project.title!,

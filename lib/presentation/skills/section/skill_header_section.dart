@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../widgets/widgets.dart';
 import '../../../config/config.dart';
 
 class SkillHeaderSection extends StatelessWidget {
@@ -30,18 +31,8 @@ class SkillHeaderSection extends StatelessWidget {
             children: <Widget>[
               Hero(
                 tag: title,
-                child: Container(
-                  width: 65,
-                  height: 65,
-                  decoration: BoxDecoration(
-                    color: AppColor.whiteBright,
-                    image: DecorationImage(
-                      image: AssetImage(imageSrc),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: AppShadow.medium,
-                  ),
+                child: MainSkillImageContainer(
+                  mainSkillImageSrc: imageSrc,
                 ),
               ),
               const SizedBox(width: 24),
@@ -60,7 +51,7 @@ class SkillHeaderSection extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height:12),
+          const SizedBox(height: 12),
           const Divider(
             color: AppColor.blackBright,
             thickness: 1.5,

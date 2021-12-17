@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import '../../../config/config.dart';
 import '../../../repository/repository.dart';
 import '../../../logic/logic.dart';
 import '../../../widgets/widgets.dart';
@@ -44,6 +45,10 @@ class ProjectsScreen extends StatelessWidget {
                         ),
                         children: state.projects?.map((project) {
                               return ProjectTile(
+                                callback: () {
+                                  Navigator.of(context).pushNamed(
+                                      "${Routes.projectDetail}/${project.id}");
+                                },
                                 type: project.type!.text,
                                 imageSrc: project.images![0],
                                 title: project.title!,

@@ -32,5 +32,11 @@ class Routes {
           const ProjectsScreen(),
         ),
         transitionType: TransitionType.fadeIn);
+
+    router.define('$projectDetail/:id', handler: Handler(
+      handlerFunc: (context, params) {
+        return ProjectDetailScreen(id: params['id']![0]);
+      },
+    ), transitionType: TransitionType.fadeIn);
   }
 }
