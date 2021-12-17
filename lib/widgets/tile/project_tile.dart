@@ -42,8 +42,7 @@ class _ProjectTileState extends State<ProjectTile> {
           maxWidth: getValueForScreenType(
             context: context,
             mobile: 560,
-            tablet: 320,
-            desktop: 280,
+            desktop: 320,
           ),
         ),
         padding: const EdgeInsets.all(18),

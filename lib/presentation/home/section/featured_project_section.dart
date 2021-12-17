@@ -13,9 +13,8 @@ class FeaturedProjectSection extends StatelessWidget {
     context.read<ProjectCubit>().getFeaturedProjects();
     return Container(
       padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: AppColor.whiteBright,
-        boxShadow: AppShadow.medium,
+      decoration: const BoxDecoration(
+        // color: AppColor.whiteBright,
       ),
       clipBehavior: Clip.hardEdge,
       child: Column(
@@ -33,23 +32,21 @@ class FeaturedProjectSection extends StatelessWidget {
           BlocConsumer<ProjectCubit, ProjectState>(
             listener: (context, state) {},
             builder: (context, state) {
-              return Center(
-                child: Wrap(
-                  spacing: 18,
-                  runSpacing: 18,
-                  children: state.featuredProjects?.map((project) {
-                        return ProjectTile(
-                          type: project!.type!.text,
-                          imageSrc: project.images!.first,
-                          title: project.title!,
-                          overview: project.overview!,
-                          skills: project.skills!
-                              .map((skill) => skill!.title!)
-                              .toList(),
-                        );
-                      }).toList() ??
-                      [],
-                ),
+              return Wrap(
+                spacing: 18,
+                runSpacing: 18,
+                children: state.featuredProjects?.map((project) {
+                      return ProjectTile(
+                        type: project!.type!.text,
+                        imageSrc: project.images!.first,
+                        title: project.title!,
+                        overview: project.overview!,
+                        skills: project.skills!
+                            .map((skill) => skill!.title!)
+                            .toList(),
+                      );
+                    }).toList() ??
+                    [],
               );
             },
           ),

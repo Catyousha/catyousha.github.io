@@ -3,6 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 import 'config/config.dart';
 import 'logic/logic.dart';
@@ -15,6 +16,14 @@ void main(List<String> args) async {
     statusBarColor: AppColor.blueBase,
     statusBarBrightness: Brightness.dark,
   ));
+
+  ResponsiveSizingConfig.instance.setCustomBreakpoints(
+    const ScreenBreakpoints(
+      desktop: 640,
+      tablet: 560,
+      watch: 200,
+    ),
+  );
 
   runApp(DevicePreview(
     enabled: true,

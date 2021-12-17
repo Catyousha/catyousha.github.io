@@ -11,7 +11,7 @@ class FeaturedSkillsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     context.read<SkillCubit>().getFeaturedSkills();
     return Container(
-      color: AppColor.whiteBright,
+      // color: AppColor.whiteBright,
       padding: const EdgeInsets.all(18),
       child: Column(
         children: <Widget>[

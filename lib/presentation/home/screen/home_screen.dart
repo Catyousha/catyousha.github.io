@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                     ExperiencesSection(),
                   ],
                 ),
-                desktop: (context) => Column(
+                tablet: (context) => Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Row(
