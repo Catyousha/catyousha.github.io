@@ -35,6 +35,12 @@ class SkillFeaturedProjectSection extends StatelessWidget {
             runSpacing: 8,
             children: projects.map((project) {
               return ProjectTile(
+                callback: () {
+                  Navigator.pushNamed(
+                    context,
+                    "${Routes.projectDetail}/${project.id}",
+                  );
+                },
                 imageSrc: project.images![0],
                 skills: project.skills!.map((e) => e!.title ?? '-').toList(),
                 overview: project.overview!,

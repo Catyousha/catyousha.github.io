@@ -45,7 +45,10 @@ class ProjectDetailScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 8),
                           ProjectGallerySection(
-                            imagesSrc: state.selectedProject!.images!,
+                            imagesSrc: state.selectedProject!.images ?? [],
+                          ),
+                          ProjectKnowledgeSection(
+                            knowledges: state.selectedProject!.knowledges!,
                           ),
                         ],
                       )

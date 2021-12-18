@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import '../../../config/config.dart';
 import '../../../widgets/widgets.dart';
+import '../../../config/config.dart';
 
-class SkillCapabilitySection extends StatelessWidget {
-  const SkillCapabilitySection({
+class ProjectKnowledgeSection extends StatelessWidget {
+  const ProjectKnowledgeSection({
     Key? key,
-    required this.icon,
-    required this.capabilities,
+    required this.knowledges,
   }) : super(key: key);
 
-  final IconData icon;
-  final List<String> capabilities;
+  final List<String> knowledges;
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +18,7 @@ class SkillCapabilitySection extends StatelessWidget {
         vertical: 56,
         horizontal: 24,
       ),
-      decoration: BoxDecoration(
-        color: AppColor.blueLight,
-        boxShadow: AppShadow.medium,
-      ),
+      color: AppColor.blueLight,
       child: Column(
         crossAxisAlignment: getValueForScreenType(
           context: context,
@@ -38,7 +33,7 @@ class SkillCapabilitySection extends StatelessWidget {
               tablet: Alignment.topCenter,
             ),
             child: Text(
-              "I'm capable of...",
+              "Implemented knowledges...",
               style: AppText.textLarge.copyWith(
                 color: AppColor.whiteBright,
                 fontWeight: AppFontWeight.bold,
@@ -55,11 +50,11 @@ class SkillCapabilitySection extends StatelessWidget {
           Wrap(
             spacing: 56,
             runSpacing: 8,
-            children: capabilities
+            children: knowledges
                 .map(
-                  (capability) => BulletedIconText(
-                    text: capability,
-                    icon: icon,
+                  (knowledge) => BulletedIconText(
+                    text: knowledge,
+                    icon: Icons.source,
                   ),
                 )
                 .toList(),
