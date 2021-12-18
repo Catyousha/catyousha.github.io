@@ -31,17 +31,22 @@ class ProjectDetailScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           ProjectHeaderSection(
-                              title: state.selectedProject!.title!,
-                              overview: state.selectedProject!.overview!,
-                              fullDescription:
-                                  state.selectedProject!.fullDescription!,
-                              time: state.selectedProject!.time!,
-                              skills: state.selectedProject!.skills!
-                                  .map((e) => e!.title!)
-                                  .toList(),
-                              repoUrl: state.selectedProject!.repoUrl,
-                              mainSkillImageSrc:
-                                  state.selectedProject!.skills![0]!.imageSrc!),
+                            title: state.selectedProject!.title!,
+                            overview: state.selectedProject!.overview!,
+                            fullDescription:
+                                state.selectedProject!.fullDescription!,
+                            time: state.selectedProject!.time!,
+                            skills: state.selectedProject!.skills!
+                                .map((e) => e!.title!)
+                                .toList(),
+                            repoUrl: state.selectedProject!.repoUrl,
+                            mainSkillImageSrc:
+                                state.selectedProject!.skills![0]!.imageSrc!,
+                          ),
+                          const SizedBox(height: 8),
+                          ProjectGallerySection(
+                            imagesSrc: state.selectedProject!.images!,
+                          ),
                         ],
                       )
                     : Center(
