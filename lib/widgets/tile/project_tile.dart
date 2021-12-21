@@ -12,6 +12,7 @@ class ProjectTile extends StatefulWidget {
     required this.title,
     required this.overview,
     required this.skills,
+    this.maxWidth,
     this.isPinned = false,
     this.callback,
   }) : super(key: key);
@@ -21,6 +22,7 @@ class ProjectTile extends StatefulWidget {
   final String imageSrc;
   final String title;
   final String overview;
+  final double? maxWidth;
   final List<String> skills;
   final VoidCallback? callback;
 
@@ -39,11 +41,13 @@ class _ProjectTileState extends State<ProjectTile> {
       onPressed: widget.callback,
       child: Container(
         constraints: BoxConstraints(
-          maxWidth: getValueForScreenType(
-            context: context,
-            mobile: 560,
-            desktop: 320,
-          ),
+          maxWidth: widget.maxWidth ??
+              getValueForScreenType(
+                context: context,
+                mobile: 560,
+                tablet: 320,
+                desktop: 320,
+              ),
         ),
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(

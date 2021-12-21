@@ -6,9 +6,9 @@ class Routes {
   static const initial = home;
   static const home = '/';
   static const skills = '/skills';
-  static const skillDetail = '/skills/d/';
+  static const skillDetail = '/skills/d';
   static const projects = '/projects';
-  static const projectDetail = '/projects/d/';
+  static const projectDetail = '/projects/d';
 
   static void configureRoutes(FluroRouter router) {
     router.define(home,

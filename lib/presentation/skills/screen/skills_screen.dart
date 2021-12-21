@@ -42,8 +42,16 @@ class SkillsScreen extends StatelessWidget {
                         alignment: WrapAlignment.center,
                         runAlignment: WrapAlignment.center,
                         crossAxisAlignment: WrapCrossAlignment.center,
-                        spacing: 2,
-                        runSpacing: 2,
+                        spacing: getValueForScreenType(
+                          context: context,
+                          mobile: 2,
+                          desktop: 18,
+                        ),
+                        runSpacing: getValueForScreenType(
+                          context: context,
+                          mobile: 2,
+                          desktop: 18,
+                        ),
                         children: state.skills?.map((e) {
                               return SkillTile(
                                 title: e.title!,

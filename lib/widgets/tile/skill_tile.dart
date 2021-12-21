@@ -74,11 +74,14 @@ class _SkillTileState extends State<SkillTile> {
               ),
             ),
             const SizedBox(height: 18),
-            Text(widget.title,
-                style: AppText.textSemiLarge.copyWith(
-                  fontWeight: AppFontWeight.bold,
-                  color: AppColor.blueBase,
-                ))
+            FittedBox(
+              fit: BoxFit.fitWidth,
+              child: Text(widget.title,
+                  style: AppText.textSemiLarge.copyWith(
+                    fontWeight: AppFontWeight.bold,
+                    color: AppColor.blueBase,
+                  )),
+            )
           ],
         ),
       ),

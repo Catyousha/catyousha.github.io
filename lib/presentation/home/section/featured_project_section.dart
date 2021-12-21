@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import '../../../repository/repository.dart';
 import '../../../config/config.dart';
 import '../../../logic/logic.dart';
@@ -48,6 +49,12 @@ class FeaturedProjectSection extends StatelessWidget {
                         skills: project.skills!
                             .map((skill) => skill!.title!)
                             .toList(),
+                        maxWidth: getValueForScreenType(
+                          context: context,
+                          mobile: 560,
+                          tablet: 250,
+                          desktop: 250,
+                        ),
                       );
                     }).toList() ??
                     [],

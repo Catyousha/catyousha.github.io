@@ -15,15 +15,15 @@
 ///
 import 'package:flutter/widgets.dart';
 
-class ReportfolioIcons {
-  ReportfolioIcons._();
+class Reportfolio {
+  Reportfolio._();
 
   static const _kFontFam = 'Reportfolio';
   static const String? _kFontPkg = null;
 
   static const IconData flutter = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData octicons = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData wavingHand = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData waving_hand = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData codeigniter3 = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData git = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData figma = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
@@ -31,6 +31,5 @@ class ReportfolioIcons {
   static const IconData laravel = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData react = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData tailwind = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData bootstrapLogo = IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-
+  static const IconData bootstrap_logo = IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
