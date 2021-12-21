@@ -26,7 +26,7 @@ void main(List<String> args) async {
   );
 
   runApp(DevicePreview(
-    enabled: true,
+    enabled: false,
     builder: (context) {
       return const ReportfolioApp();
     },

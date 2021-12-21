@@ -12,7 +12,7 @@ class ProjectCubit extends Cubit<ProjectState> {
   void getProjects() {
     emit(state.copyWith(status: ProjectStateStatus.loading));
     try {
-      final projects = _projectRepository.getProjects();
+      final projects = _projectRepository.getProjectsSortedByDate();
       emit(state.copyWith(
         status: ProjectStateStatus.loaded,
         projects: projects,
@@ -31,8 +31,8 @@ class ProjectCubit extends Cubit<ProjectState> {
         status: ProjectStateStatus.loaded,
         featuredProjects: [
           _projectRepository.getProject(0),
-          _projectRepository.getProject(0),
-          _projectRepository.getProject(0),
+          _projectRepository.getProject(1),
+          _projectRepository.getProject(2),
         ],
       ));
     } catch (e) {

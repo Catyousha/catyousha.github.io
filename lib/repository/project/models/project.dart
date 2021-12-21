@@ -32,6 +32,7 @@ class Project extends Equatable {
   final List<String>? knowledges;
   final List<String>? images;
   final String? repoUrl;
+  final DateTime? dateStarted;
 
   //constructor
   const Project({
@@ -45,6 +46,7 @@ class Project extends Equatable {
     this.knowledges,
     this.images,
     this.repoUrl,
+    this.dateStarted,
   });
 
   static Project get empty => const Project();
@@ -61,6 +63,7 @@ class Project extends Equatable {
     List<String>? knowledges,
     List<String>? images,
     String? repoUrl,
+    DateTime? dateStarted,
   }) {
     return Project(
       id: id ?? this.id,
@@ -73,6 +76,7 @@ class Project extends Equatable {
       knowledges: knowledges ?? this.knowledges,
       images: images ?? this.images,
       repoUrl: repoUrl ?? this.repoUrl,
+      dateStarted: dateStarted ?? this.dateStarted,
     );
   }
 
@@ -89,5 +93,6 @@ class Project extends Equatable {
         knowledges,
         images,
         repoUrl,
+        dateStarted,
       ];
 }

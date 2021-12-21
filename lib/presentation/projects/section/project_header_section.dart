@@ -75,6 +75,7 @@ class ProjectHeaderSection extends StatelessWidget {
                     const SizedBox(height: 8),
                     Wrap(
                       spacing: 8,
+                      runSpacing: 8,
                       children: skills.map((skill) {
                         return SkillPill(label: skill);
                       }).toList(),

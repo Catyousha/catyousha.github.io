@@ -36,7 +36,6 @@ class BulletedIconText extends StatelessWidget {
                 color: AppColor.whiteBright,
                 fontWeight: AppFontWeight.medium,
               ),
-              textAlign: TextAlign.justify,
               softWrap: true,
             ),
           ),
