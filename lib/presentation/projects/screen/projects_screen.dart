@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../../../config/config.dart';
 import '../../../repository/repository.dart';
@@ -43,22 +44,31 @@ class ProjectsScreen extends StatelessWidget {
                           mobile: 8,
                           tablet: 18,
                         ),
-                        children: state.projects?.map((project) {
-                              return ProjectTile(
-                                callback: () {
-                                  Navigator.of(context).pushNamed(
-                                      "${Routes.projectDetail}/${project.id}");
-                                },
-                                type: project.type!.text,
-                                imageSrc: project.images![0],
-                                title: project.title!,
-                                overview: project.overview!,
-                                skills: project.skills!
-                                    .map((e) => e!.title!)
-                                    .toList(),
-                              );
-                            }).toList() ??
-                            [],
+                        children: AnimationConfiguration.toStaggeredList(
+                          duration: const Duration(milliseconds: 300),
+                          childAnimationBuilder: (widget) => SlideAnimation(
+                            verticalOffset: -50.0,
+                            child: FadeInAnimation(
+                              child: widget,
+                            ),
+                          ),
+                          children: state.projects?.map((project) {
+                                return ProjectTile(
+                                  callback: () {
+                                    Navigator.of(context).pushNamed(
+                                        "${Routes.projectDetail}/${project.id}");
+                                  },
+                                  type: project.type!.text,
+                                  imageSrc: project.images![0],
+                                  title: project.title!,
+                                  overview: project.overview!,
+                                  skills: project.skills!
+                                      .map((e) => e!.title!)
+                                      .toList(),
+                                );
+                              }).toList() ??
+                              [],
+                        ),
                       ),
                     ),
                   );

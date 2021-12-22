@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../../config/config.dart';
 import '../widgets.dart';
@@ -66,7 +67,7 @@ class _SkillTileState extends State<SkillTile> {
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     image: AssetImage(widget.imgSrc),
-                    fit: BoxFit.cover,
+                    fit: BoxFit.scaleDown,
                   ),
                   boxShadow:
                       isHovered ? AppShadow.mediumInner : AppShadow.small,

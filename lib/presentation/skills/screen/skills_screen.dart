@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../../../config/config.dart';
 import '../../../logic/logic.dart';
@@ -52,19 +53,28 @@ class SkillsScreen extends StatelessWidget {
                           mobile: 2,
                           desktop: 18,
                         ),
-                        children: state.skills?.map((e) {
-                              return SkillTile(
-                                title: e.title!,
-                                imgSrc: e.imageSrc!,
-                                callback: () {
-                                  Navigator.pushNamed(
-                                    context,
-                                    "${Routes.skillDetail}/${e.id}",
-                                  );
-                                },
-                              );
-                            }).toList() ??
-                            [],
+                        children: AnimationConfiguration.toStaggeredList(
+                          duration: const Duration(milliseconds: 300),
+                          childAnimationBuilder: (widget) => SlideAnimation(
+                            verticalOffset: -50.0,
+                            child: FadeInAnimation(
+                              child: widget,
+                            ),
+                          ),
+                          children: state.skills?.map((e) {
+                                return SkillTile(
+                                  title: e.title!,
+                                  imgSrc: e.imageSrc!,
+                                  callback: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      "${Routes.skillDetail}/${e.id}",
+                                    );
+                                  },
+                                );
+                              }).toList() ??
+                              [],
+                        ),
                       ),
                     ),
                   );
