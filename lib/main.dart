@@ -9,7 +9,7 @@ import 'config/config.dart';
 import 'logic/logic.dart';
 import 'repository/repository.dart';
 
-void main(List<String> args) async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     systemNavigationBarColor: AppColor.blueBase,
