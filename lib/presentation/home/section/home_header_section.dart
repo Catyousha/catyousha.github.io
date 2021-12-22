@@ -38,7 +38,7 @@ class _HomeHeaderSectionState extends State<HomeHeaderSection> {
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                          '${AssetConstant.commonImageLocation}/header-bg.jpg'),
+                          '${AssetConstant.commonImageLocation}/header-bg2.png'),
                       fit: BoxFit.cover,
                     ),
                   ),

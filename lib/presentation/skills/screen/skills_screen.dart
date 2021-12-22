@@ -45,12 +45,12 @@ class SkillsScreen extends StatelessWidget {
                         crossAxisAlignment: WrapCrossAlignment.center,
                         spacing: getValueForScreenType(
                           context: context,
-                          mobile: 2,
+                          mobile: 10,
                           desktop: 18,
                         ),
                         runSpacing: getValueForScreenType(
                           context: context,
-                          mobile: 2,
+                          mobile: 10,
                           desktop: 18,
                         ),
                         children: AnimationConfiguration.toStaggeredList(

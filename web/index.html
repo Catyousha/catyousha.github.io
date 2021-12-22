@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -18,20 +19,24 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Jaka Asa Baldan Ahmad portfolio.">
+  <meta name="description" content="Fast learner, realistic, adaptive.">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="reportfolio">
+  <meta property="og:image" content="header-bg2.png" />
+  <meta property="og:title" content="Re:Portfolio | Jaka Asa Baldan Ahmad" />
+  <meta property="og:description" content="Re:Portfolio, starting portfolio in another techstack from zero." />
   <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
 
   <!-- Favicon -->
-  <link rel="icon" href="favicon/favicon.ico"/>
+  <link rel="icon" href="favicon/favicon.ico" />
 
-  <title>reportfolio</title>
+  <title>Re:Portfolio | Jaka Asa Baldan Ahmad</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
@@ -49,8 +54,8 @@
       scriptTag.type = 'application/javascript';
       document.body.append(scriptTag);
     }
-
-    if ('serviceWorker' in navigator) {
+    loadMainDartJs();
+    /*if ('serviceWorker' in navigator) {
       // Service workers are supported. Use them.
       window.addEventListener('load', function () {
         // Wait for registration to finish before dropping the <script> tag.
@@ -98,7 +103,8 @@
     } else {
       // Service workers not supported. Just drop the <script> tag.
       loadMainDartJs();
-    }
+    }*/
   </script>
 </body>
+
 </html>

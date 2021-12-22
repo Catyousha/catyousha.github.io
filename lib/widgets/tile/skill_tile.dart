@@ -60,8 +60,16 @@ class _SkillTileState extends State<SkillTile> {
             Hero(
               tag: widget.title,
               child: Container(
-                width: 90,
-                height: 90,
+                width: getValueForScreenType(
+                  context: context,
+                  mobile: 45,
+                  tablet: 90,
+                ),
+                height: getValueForScreenType(
+                  context: context,
+                  mobile: 45,
+                  tablet: 90,
+                ),
                 decoration: BoxDecoration(
                   color: isHovered ? Colors.transparent : AppColor.whiteBright,
                   shape: BoxShape.circle,
