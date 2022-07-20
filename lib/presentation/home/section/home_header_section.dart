@@ -87,7 +87,7 @@ class _HomeHeaderSectionState extends State<HomeHeaderSection> {
               child: FittedBox(
                 fit: BoxFit.fitWidth,
                 child: Text(
-                  '20 years old, informatics engineering student.',
+                  '21 years old, informatics engineering student.',
                   style: AppText.textMedium,
                 ),
               ),
