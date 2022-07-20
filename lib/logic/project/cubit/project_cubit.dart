@@ -31,8 +31,8 @@ class ProjectCubit extends Cubit<ProjectState> {
         status: ProjectStateStatus.loaded,
         featuredProjects: [
           _projectRepository.getProject(0),
-          _projectRepository.getProject(1),
-          _projectRepository.getProject(2),
+          _projectRepository.getProject(6),
+          _projectRepository.getProject(7),
         ],
       ));
     } catch (e) {

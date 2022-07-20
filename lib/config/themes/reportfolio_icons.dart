@@ -31,6 +31,6 @@ class ReportfolioIcons {
   static const IconData laravel = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData react = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData tailwind = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData kotlin = IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData bootstrapLogo = IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-
 }

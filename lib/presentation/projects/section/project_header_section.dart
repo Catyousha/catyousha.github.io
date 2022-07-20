@@ -93,7 +93,7 @@ class ProjectHeaderSection extends StatelessWidget {
           const SizedBox(height: 2),
           Text(
             fullDescription,
-            style: AppText.textNormal,
+            style: AppText.textSemiLarge,
             softWrap: true,
             textAlign: TextAlign.justify,
           ),

@@ -160,5 +160,56 @@ class ProjectStorage {
       ],
       dateStarted: DateTime(2020, 10, 1),
     ),
+    Project(
+      id: 6,
+      title: 'Coinsleek',
+      type: ProjectType.project,
+      overview: 'Made cryptobros life easier.',
+      fullDescription:
+      "As one of two Flutter developers in team, this is a challenging project for both of us. Coinsleek is an application to manage  crypto assets and automatically doing transaction using bots through API binding which provided by each crypto platforms (ex: Binance). In 4 months, i’ve worked on some features such as: account verification, assets deposit and withdrawal, also profile and API binding.",
+      time: 'January - April 2022',
+      knowledges: const [
+        'Implement Auth0 for Authentication',
+        'State management with BLoC Cubit',
+        'Implement Dynamic Link with Firebase.',
+      ],
+      images: const [
+        '${AssetConstant.projectImageLocation}/Coinsleek - 1.png',
+        '${AssetConstant.projectImageLocation}/Coinsleek - 2.png',
+        '${AssetConstant.projectImageLocation}/Coinsleek - 3.png',
+      ],
+      skills: [
+        SkillStorage.getSkillByName('Flutter'),
+        SkillStorage.getSkillByName('Git'),
+      ],
+      dateStarted: DateTime(2022, 01, 10),
+    ),
+    Project(
+      id: 7,
+      title: 'HotelBli',
+      type: ProjectType.project,
+      overview: 'Enjoy best hotel that suits you well.',
+      fullDescription:
+      "Along side with other 9 Bangkit cohorts, I create a hotel recommendation application built with 5 different types of algorithm to provide user the best experiences to stay in Bali, and also help Traveloka to solve hotel ranking problems as part of Bangkit 2022 Company Capstone Project. Team consist of 3 divisions which are: Machine Learning, Cloud Computing, and Mobile Development. In Mobile Development, i work on several features such as: authentication, for you, and profile.",
+      time: 'May - June 2022',
+      knowledges: const [
+        'Implement Repository Pattern architecture',
+        'Authentication using Google Sign In',
+        'Utilize Material 3 Design System.',
+        'Collaborate with other teams with different tech stack in SCRUM environment.',
+      ],
+      images: const [
+        '${AssetConstant.projectImageLocation}/HotelBli - 1.png',
+        '${AssetConstant.projectImageLocation}/HotelBli - 2.png',
+        '${AssetConstant.projectImageLocation}/HotelBli - 3.png',
+        '${AssetConstant.projectImageLocation}/HotelBli - 4.png',
+      ],
+      skills: [
+        SkillStorage.getSkillByName('Kotlin'),
+        SkillStorage.getSkillByName('Figma'),
+        SkillStorage.getSkillByName('Git'),
+      ],
+      dateStarted: DateTime(2022, 05, 14),
+    ),
   ];
 }

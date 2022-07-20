@@ -130,5 +130,18 @@ class SkillStorage {
         'Adapting with many Javascript frameworks.',
       ],
     ),
+    const Skill(
+      id: 9,
+      title: 'Kotlin',
+      catchupLine: "Still asserting its dominance natively.",
+      learnedSince: 'January 2022',
+      imageSrc: '${AssetConstant.skillImageLocation}/kotlin.png',
+      icon: ReportfolioIcons.kotlin,
+      capabilities: <String>[
+        'Using repository pattern architecture as recommended practices.',
+        'Turning UI design from Figma into XML views.',
+        'Integrating with APIs through retrofit.',
+      ],
+    ),
   ];
 }

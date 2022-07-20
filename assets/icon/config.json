@@ -159,6 +159,20 @@
       "search": [
         "bootstrap_logo"
       ]
+    },
+    {
+      "uid": "445821756b8e19294a301869b9fa220e",
+      "css": "kotlin_icon-1",
+      "code": 59403,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M0 1000L501.7 498.3 1000 1000H0ZM0 0H501.7L0 541.7V0ZM501.7 0L0 528.3V1000L501.7 498.3 1000 0H501.7Z",
+        "width": 1000
+      },
+      "search": [
+        "kotlin_icon-1"
+      ]
     }
   ]
 }
